@@ -2,8 +2,7 @@
 <html>
   <head>
     <title></title>
-    <meta charset="utf-8" />
-    
+    <meta charset="utf-8" />	
   </head>
   <body>
     <div
@@ -32,24 +31,24 @@
           </tr>
           <tr>
             <td style="width: 330px"><b>Matrícula:</b></td>
-            <td style="text-transform: uppercase">2241448</td>
+            <td id="matricula" style="text-transform: uppercase"></td>
           </tr>
           <tr>
             <td style="width: 180px"><b>Nome:</b></td>
-            <td style="text-transform: uppercase">MURILO GOMES PEREIRA</td>
+            <td id="nome" style="text-transform: uppercase"></td>
           </tr>
           <tr>
             <td style="width: 180px"><b>RG:</b></td>
-            <td style="text-transform: uppercase">475895770</td>
+            <td id="rg" style="text-transform: uppercase"></td>
           </tr>
           <tr>
             <td style="width: 180px"><b>Nascimento:</b></td>
-            <td style="text-transform: uppercase">06/06/1998</td>
+            <td id="nascimento" style="text-transform: uppercase"></td>
           </tr>
           <tr>
             <td style="width: 180px"><b>Curso:</b></td>
-            <td style="text-transform: uppercase">
-              43701 - CIÊNCIA DA COMPUTAÇÃO
+            <td id="curso" style="text-transform: uppercase">
+              
             </td>
           </tr>
           <tr>
@@ -64,7 +63,7 @@
           </tr>
           <tr>
             <td style="width: 30px"><b>Validade:</b></td>
-            <td style="text-transform: uppercase">JUL/2022</td>
+            <td id="validade" style="text-transform: uppercase"></td>
           </tr>
           <tr>
             <td colspan="2"><hr noshade="" color="blue" size="1" /></td>
@@ -76,8 +75,31 @@
       </table>
     </div>
     <script type="text/javascript">
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+
+	const matricula = urlParams.get('matricula')
+	document.getElementById("matricula").textContent = matricula
+
+	const nome = urlParams.get('nome')
+	document.getElementById("nome").textContent = nome 
+
+	const rg = urlParams.get('rg')
+	document.getElementById("rg").textContent = rg 
+
+	const nascimento = urlParams.get('nascimento')
+
+	data = new Date(nascimento);
+	nascimentoFormatado = data.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
+	
+        document.getElementById("nascimento").textContent = nascimentoFormatado
+
+	const curso = urlParams.get('curso')
+	document.getElementById("curso").textContent = curso 
+
+	const validade = urlParams.get('validade')
+	document.getElementById("validade").textContent = validade
     
-        document.getElementById("date").textContent = "testinho"
         var data = new Date();
         var dia = String(data.getDate()).padStart(2, "0");
         var mes = String(data.getMonth() + 1).padStart(2, "0");
