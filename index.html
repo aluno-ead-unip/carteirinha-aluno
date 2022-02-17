@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    
+  </head>
+  <body>
+    <div
+      style="
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-top: 2%;
+        color: #00008b;
+        font-family: Verdana;
+        font-size: 30px;
+      "
+    >
+      <img
+        src="http://aluno.ead.unip.br/Lyceum/Api/Content/img/logo_tecuni.gif"
+      />
+      <table width="100%" border="0" cellspacing="0" cellpadding="1">
+        <tbody>
+          <tr>
+            <td colspan="2" align="center">
+              <b><font face="Arial">Dados do Aluno</font></b>
+              <font face="Arial"></font>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2"><hr noshade="" color="blue" size="1" /></td>
+          </tr>
+          <tr>
+            <td style="width: 330px"><b>Matrícula:</b></td>
+            <td style="text-transform: uppercase">2241448</td>
+          </tr>
+          <tr>
+            <td style="width: 180px"><b>Nome:</b></td>
+            <td style="text-transform: uppercase">MURILO GOMES PEREIRA</td>
+          </tr>
+          <tr>
+            <td style="width: 180px"><b>RG:</b></td>
+            <td style="text-transform: uppercase">475895770</td>
+          </tr>
+          <tr>
+            <td style="width: 180px"><b>Nascimento:</b></td>
+            <td style="text-transform: uppercase">06/06/1998</td>
+          </tr>
+          <tr>
+            <td style="width: 180px"><b>Curso:</b></td>
+            <td style="text-transform: uppercase">
+              43701 - CIÊNCIA DA COMPUTAÇÃO
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 180px"><b>Unidade:</b></td>
+            <td style="text-transform: uppercase">
+              4003 - BAURU - POLO PRÓPRIO
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 180px"><b>Carteirinha:</b></td>
+            <td style="text-transform: uppercase">Ativa</td>
+          </tr>
+          <tr>
+            <td style="width: 30px"><b>Validade:</b></td>
+            <td style="text-transform: uppercase">JUL/2022</td>
+          </tr>
+          <tr>
+            <td colspan="2"><hr noshade="" color="blue" size="1" /></td>
+          </tr>
+          <tr>
+            <td colspan="2" style="font-size: 18px" id="date"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script type="text/javascript">
+    
+        document.getElementById("date").textContent = "testinho"
+        var data = new Date();
+        var dia = String(data.getDate()).padStart(2, "0");
+        var mes = String(data.getMonth() + 1).padStart(2, "0");
+        var ano = data.getFullYear();
+        dataAtual = dia + "/" + mes + "/" + ano;
+  
+        document.getElementById("date").textContent = "Data: " + dataAtual
+      </script>
+  </body>
+</html>
